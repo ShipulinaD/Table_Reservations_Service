@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BookingService.Domain.Exceptions;
 
 
-/// Исключение: попытка подтвердить отменённую бронь
+/// Исключение: попытка подтвердить отменённую бронь 
 public class ConfirmCancelledReservationException : DomainException
 {
     public Guid ReservationId { get; }

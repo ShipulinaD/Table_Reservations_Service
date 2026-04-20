@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using BookingService.ValueObject.Validators;
 
-namespace BookingService.Domain.Entities;
+namespace BookingService.Domain.Entities; 
 
 
 /// Сущность "Пользователь" с бизнес-логикой

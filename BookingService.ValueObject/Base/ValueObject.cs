@@ -10,7 +10,7 @@ namespace BookingService.ValueObject.Base;
 /// Базовый класс для Value Object'ов
 public abstract class ValueObject
 {
-    protected abstract IEnumerable<object> GetEqualityComponents();
+    protected abstract IEnumerable<object> GetEqualityComponents(); 
 
     public override bool Equals(object obj)
     {

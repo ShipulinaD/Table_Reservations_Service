@@ -8,7 +8,7 @@ namespace BookingService.Domain.Exceptions;
 
 
 /// Исключение: стол уже забронирован на указанное время
-public class TableAlreadyBookedException : DomainException
+public class TableAlreadyBookedException : DomainException 
 {
     public Guid TableId { get; }
     public DateTime StartTime { get; }

@@ -11,7 +11,7 @@ namespace BookingService.ValueObject.Validators;
 /// Валидатор для количества мест
 public class SeatsValidator : IValidator<int>
 {
-    public void Validate(int seats)
+    public void Validate(int seats) 
     {
         if (seats < 1)
             throw new ArgumentException("Количество мест должно быть не менее 1");

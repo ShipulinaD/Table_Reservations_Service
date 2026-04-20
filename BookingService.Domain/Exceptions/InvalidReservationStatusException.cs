@@ -8,7 +8,7 @@ namespace BookingService.Domain.Exceptions;
 
 
 /// Исключение: недопустимая операция со статусом бронирования
-public class InvalidReservationStatusException : DomainException
+public class InvalidReservationStatusException : DomainException 
 {
     public InvalidReservationStatusException(string message) : base(message) { }
 }

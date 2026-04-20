@@ -7,7 +7,7 @@ namespace BookingService.Domain.Entities;
 
 /// Сущность "Бронирование" с бизнес-логикой
 public class Reservation
-{
+{ 
     private static readonly TimeRangeValidator _timeRangeValidator = new();
     private static readonly GuestsCountValidator _guestsCountValidator = new();
 

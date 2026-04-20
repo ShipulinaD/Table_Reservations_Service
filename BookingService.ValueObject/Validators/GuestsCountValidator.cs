@@ -10,7 +10,7 @@ namespace BookingService.ValueObject.Validators;
 
 
 /// Валидатор для количества гостей
-public class GuestsCountValidator : IValidator<int>
+public class GuestsCountValidator : IValidator<int> 
 {
     public void Validate(int guestsCount)
     {

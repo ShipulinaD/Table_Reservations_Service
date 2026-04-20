@@ -8,7 +8,7 @@ namespace BookingService.Domain.Exceptions;
 
 
 /// Исключение: количество гостей превышает количество мест за столом
-public class GuestsExceedSeatsException : DomainException
+public class GuestsExceedSeatsException : DomainException 
 {
     public int GuestsCount { get; }
     public int Seats { get; }

@@ -10,7 +10,7 @@ namespace BookingService.ValueObject.Validators;
 
 /// Валидатор для номера телефона
 public class PhoneValidator : IValidator<string>
-{
+{ 
     public void Validate(string phone)
     {
         if (string.IsNullOrWhiteSpace(phone))

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookingService.Domain.Exceptions;
 
-
+ 
 /// Исключение: попытка отменить уже прошедшую бронь
 public class CancelPastReservationException : DomainException
 {

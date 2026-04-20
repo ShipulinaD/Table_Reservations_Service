@@ -7,7 +7,7 @@ using BookingService.ValueObject.Validators;
 namespace BookingService.Domain.Entities;
 
 
-/// Сущность "Стол" с бизнес-логикой
+/// Сущность "Стол" с бизнес-логикой 
 public class Table
 {
     private static readonly SeatsValidator _seatsValidator = new();

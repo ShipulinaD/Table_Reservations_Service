@@ -9,7 +9,7 @@ namespace BookingService.ValueObject.Exceptions;
 
 /// Исключение для ошибок валидации Value Object'ов
 public class ValueObjectValidationException : Exception
-{
+{ 
     public ValueObjectValidationException(string message) : base(message) { }
 
     public ValueObjectValidationException(string message, Exception innerException)

@@ -10,7 +10,7 @@ public class ReservationStatus : Base.ValueObject
 {
     public string Value { get; private set; }
 
-    // Предопределённые статусы
+    // Предопределённые статусы 
     public static readonly ReservationStatus Reserved = new("reserved");
     public static readonly ReservationStatus Cancelled = new("cancelled");
 

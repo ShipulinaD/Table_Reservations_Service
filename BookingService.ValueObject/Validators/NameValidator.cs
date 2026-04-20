@@ -9,7 +9,7 @@ using BookingService.ValueObject.Base;
 namespace BookingService.ValueObject.Validators;
 
 /// Валидатор для имени
-public class NameValidator : IValidator<string>
+public class NameValidator : IValidator<string> 
 {
     public void Validate(string name)
     {

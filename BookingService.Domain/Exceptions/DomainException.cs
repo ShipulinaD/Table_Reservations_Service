@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BookingService.Domain.Exceptions;
 
 
-/// Базовое исключение для доменных ошибок
+/// Базовое исключение для доменных ошибок 
 public abstract class DomainException : Exception
 {
     protected DomainException(string message) : base(message) { }

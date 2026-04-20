@@ -9,7 +9,7 @@ using BookingService.ValueObject.Base;
 namespace BookingService.ValueObject.Validators;
 
 /// Валидатор для временного интервала (StartTime, EndTime)
-public class TimeRangeValidator : IValidator<(DateTime StartTime, DateTime EndTime)>
+public class TimeRangeValidator : IValidator<(DateTime StartTime, DateTime EndTime)> 
 {
     public void Validate((DateTime StartTime, DateTime EndTime) range)
     {

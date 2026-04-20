@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookingService.ValueObject.Base;
 
-
+ 
 /// Интерфейс валидатора для Value Object'ов
 public interface IValidator<in T>
 {

@@ -8,7 +8,7 @@ namespace BookingService.Domain.Exceptions;
 
 
 /// Исключение: некорректное время бронирования
-public class InvalidReservationTimeException : DomainException
+public class InvalidReservationTimeException : DomainException 
 {
     public InvalidReservationTimeException(string message) : base(message) { }
 
