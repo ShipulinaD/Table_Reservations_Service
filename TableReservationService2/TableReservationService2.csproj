@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BookingService.Domain.Repositories.Abstractions\BookingService.Domain.Repositories.Abstractions.csproj" />
+    <ProjectReference Include="..\BookingService.Domain\BookingService.Domain.csproj" />
+    <ProjectReference Include="..\BookingService.ValueObject\BookingService.ValueObject.csproj" />
+  </ItemGroup>
+
 </Project>
