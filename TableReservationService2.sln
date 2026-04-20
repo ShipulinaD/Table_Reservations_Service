@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingService.ValueObject"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingService.Domain.Repositories.Abstractions", "BookingService.Domain.Repositories.Abstractions\BookingService.Domain.Repositories.Abstractions.csproj", "{C5E21522-0101-43A0-B578-2BE9D080B94D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainApp", "DomainApp\DomainApp.csproj", "{A7ABB28E-B2BF-46B2-87FB-CF50B277D1C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{C5E21522-0101-43A0-B578-2BE9D080B94D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5E21522-0101-43A0-B578-2BE9D080B94D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5E21522-0101-43A0-B578-2BE9D080B94D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7ABB28E-B2BF-46B2-87FB-CF50B277D1C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7ABB28E-B2BF-46B2-87FB-CF50B277D1C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7ABB28E-B2BF-46B2-87FB-CF50B277D1C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7ABB28E-B2BF-46B2-87FB-CF50B277D1C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
