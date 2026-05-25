@@ -45,6 +45,11 @@ namespace BookingService.Domain
                 throw new GuestsExceedSeatsException(table, guestsCount.Value);
 
             var reservation = new Reservation(this, table, timeRange, guestsCount);
+
+            // регистрируем бронь в расписании столика
+            // если столик уже занят на это время - здесь будет TableAlreadyBookedException
+            table.AddReservation(reservation);
+
             _reservations.Add(reservation);
             return reservation;
         }

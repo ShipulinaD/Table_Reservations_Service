@@ -30,23 +30,46 @@ namespace BookingService.Domain
         }
 
         /// <summary>
-        /// Confirms a reservation on behalf of the cafe this admin manages.
+        /// Подтверждает бронь от имени администратора этого кафе.
+        /// Правила:
+        ///  - бронь должна относиться к кафе этого админа;
+        ///  - столик должен быть свободен на интервал брони (нет других активных пересекающихся броней).
         /// Use-case: "Подтвердить бронь".
         /// </summary>
         public void ConfirmReservation(Reservation reservation)
         {
             if (reservation == null) throw new ArgumentNullValueException(nameof(reservation));
+
+            // 1) Админ работает только со своим кафе
+            if (reservation.Table.Cafe != this.Cafe)
+                throw new AnotherCafeAdminException(reservation.Table.Cafe, this);
+
+            // 2) Столик должен быть свободен на интервал этой брони.
+            //    Сама бронь учитываться не должна — её состояние решит Reservation.Confirm.
+            var hasConflict = reservation.Table.Reservations
+                .Any(r => r != reservation && r.OverlapsWith(reservation.TimeRange));
+
+            if (hasConflict)
+                throw new TableAlreadyBookedException(reservation.Table, reservation);
+
             reservation.Confirm(this);
         }
 
         /// <summary>
-        /// Rejects a reservation on behalf of the cafe this admin manages.
+        /// Отклоняет бронь от имени администратора этого кафе.
+        /// Правило: бронь должна относиться к кафе этого админа.
         /// Use-case: "Отклонить бронь".
         /// </summary>
         public void RejectReservation(Reservation reservation)
         {
             if (reservation == null) throw new ArgumentNullValueException(nameof(reservation));
+
+            // Админ работает только со своим кафе
+            if (reservation.Table.Cafe != this.Cafe)
+                throw new AnotherCafeAdminException(reservation.Table.Cafe, this);
+
             reservation.Reject(this);
         }
+
     }
 }

@@ -9,11 +9,17 @@ namespace BookingService.Domain
     /// </summary>
     public class Table : Entity<Guid>
     {
+        private readonly ICollection<Reservation> _reservations = new List<Reservation>();
+
         public int Number { get; private set; }
 
         public Seats Seats { get; private set; } = default!;
 
         public Cafe Cafe { get; } = default!;
+
+        // Расписание столика — все его брони
+        public IReadOnlyCollection<Reservation> Reservations =>
+            _reservations.ToList().AsReadOnly();
 
         protected Table()
         {
@@ -39,6 +45,19 @@ namespace BookingService.Domain
             if (Seats == newSeats) return false;
             Seats = newSeats;
             return true;
+        }
+
+        // Добавляет бронь в расписание столика.
+        // Если столик уже занят на этот интервал — бросает исключение.
+        internal void AddReservation(Reservation reservation)
+        {
+            if (reservation == null) throw new ArgumentNullValueException(nameof(reservation));
+
+            var conflict = _reservations.FirstOrDefault(r => r.OverlapsWith(reservation.TimeRange));
+            if (conflict != null)
+                throw new TableAlreadyBookedException(this, conflict);
+
+            _reservations.Add(reservation);
         }
     }
 }

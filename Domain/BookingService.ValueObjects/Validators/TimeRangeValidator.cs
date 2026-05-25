@@ -11,7 +11,7 @@ public class TimeRangeValidator : IValidator<(DateTime StartTime, DateTime EndTi
     /// <summary>
     /// Максимальная длительность бронирования в часах
     /// </summary>
-    public static int MAX_DURATION_HOURS => 4;
+    public static int MAX_DURATION_HOURS => 3;
 
     /// <summary>
     /// Минимальная длительность бронирования в минутах
